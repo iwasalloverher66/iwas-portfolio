@@ -7,7 +7,12 @@ export interface Project {
 
 export interface NavLink {
   label: string
-  href: string
+  sectionId: string
+}
+
+export interface AboutFact {
+  label: string
+  value: string
 }
 export interface Skill {
   name: string

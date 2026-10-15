@@ -1,16 +1,17 @@
+import { SectionsConfig } from '@/shared/config'
+import TopbarNavLink from './topbar-nav-link'
+
 interface TopbarCtaProps {
   className?: string
-  onClick?: () => void
 }
 
-export default function TopbarCta({ className = '', onClick }: TopbarCtaProps) {
+export default function TopbarCta({ className = '' }: TopbarCtaProps) {
   return (
-    <a
-      href='#contact'
-      onClick={onClick}
+    <TopbarNavLink
+      sectionId={SectionsConfig.CONTACT}
       className={`rounded-lg border border-(--accent-border) bg-(--accent-bg) font-medium text-(--accent) ${className}`}
     >
       Hire me
-    </a>
+    </TopbarNavLink>
   )
 }

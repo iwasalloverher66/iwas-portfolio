@@ -12,7 +12,7 @@ function TopbarLayoutRoot({ children }: LayoutProps) {
 
   return (
     <TopbarContext value={{ isMenuOpen, menuId, toggleMenu, closeMenu }}>
-      <header className='sticky top-0 z-50 border-b border-(--border) bg-(--bg)/80 text-left backdrop-blur-md'>
+      <header className='sticky top-0 z-50 border-b border-(--border) bg-(--bg)/80 backdrop-blur-md'>
         {children}
       </header>
     </TopbarContext>

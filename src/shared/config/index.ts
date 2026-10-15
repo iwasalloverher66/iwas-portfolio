@@ -1,3 +1,3 @@
-import { PagesConfig } from './pages.config'
+import { SectionsConfig } from './sections.config'
 
-export { PagesConfig }
+export { SectionsConfig }

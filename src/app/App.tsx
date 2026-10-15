@@ -1,13 +1,10 @@
 import Layout from '@/app/layout/layout'
-import AppRouter from '@/app/router/app-router'
-import { BrowserRouter as Router } from 'react-router-dom'
+import AboutEntry from '@/features/about/about-entry'
 
 export default function App() {
   return (
-    <Router>
-      <Layout>
-        <AppRouter />
-      </Layout>
-    </Router>
+    <Layout>
+      <AboutEntry />
+    </Layout>
   )
 }

@@ -5,7 +5,7 @@ import TopbarLogo from './components/topbar-logo'
 import TopbarMobileMenu from './components/topbar-mobile-menu'
 import TopbarNav from './components/topbar-nav'
 
-export default function Topbar() {
+export default function TopbarEntry() {
   return (
     <TopbarLayout>
       <TopbarLayout.Bar>
