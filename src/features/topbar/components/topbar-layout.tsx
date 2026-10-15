@@ -1,3 +1,4 @@
+import { Show } from '@/shared/components'
 import type { LayoutProps } from '@/shared/types/'
 import { useId, useState } from 'react'
 import { TopbarContext, useTopbar } from '../topbar.context'
@@ -29,16 +30,16 @@ function TopbarLayoutActions({ children }: LayoutProps) {
 function TopbarLayoutMenu({ children }: LayoutProps) {
   const { isMenuOpen, menuId } = useTopbar()
 
-  if (!isMenuOpen) return null
-
   return (
-    <nav
-      id={menuId}
-      aria-label='Mobile navigation'
-      className='border-t border-(--border) px-6 py-4 md:hidden'
-    >
-      {children}
-    </nav>
+    <Show when={isMenuOpen}>
+      <nav
+        id={menuId}
+        aria-label='Mobile navigation'
+        className='border-t border-(--border) px-6 py-4 md:hidden'
+      >
+        {children}
+      </nav>
+    </Show>
   )
 }
 
