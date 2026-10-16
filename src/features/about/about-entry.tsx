@@ -1,7 +1,6 @@
 import { SectionsConfig } from '@/shared/config'
 import AboutFacts from './components/about-facts'
 import AboutIntro from './components/about-intro'
-
 export default function AboutEntry() {
   return (
     <section
