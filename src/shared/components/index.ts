@@ -1,3 +1,4 @@
-import Show from './show';
+import BackgroundBlurs from './background-blurs'
+import Show from './show'
 
-export { Show };
+export { BackgroundBlurs, Show }
