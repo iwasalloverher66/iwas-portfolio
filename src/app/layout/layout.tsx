@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
         className='flex-1'
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
-        transition={{ duration: 2, ease: 'easeInOut' }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
       >
         {children}
       </motion.main>

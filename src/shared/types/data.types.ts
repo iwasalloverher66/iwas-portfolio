@@ -3,6 +3,7 @@ export interface Project {
   link: string
   title: string
   description: string
+  tags: string[]
 }
 
 export interface NavLink {
@@ -17,4 +18,10 @@ export interface AboutFact {
 export interface Skill {
   name: string
   level: string
+}
+
+export interface ContactLink {
+  label: string
+  value: string
+  href: string
 }
