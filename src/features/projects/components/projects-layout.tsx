@@ -1,6 +1,7 @@
 import { SectionsConfig } from '@/shared/config'
+import type { LayoutProps } from '@/shared/types'
 
-export default function ProjectsLayout({ children }: { children: React.ReactNode }) {
+export default function ProjectsLayout({ children }: LayoutProps) {
   return (
     <section
       id={SectionsConfig.PROJECTS}

@@ -1,3 +1,5 @@
+import HiremeProvider from '@/features/hireme/components/hireme-provider'
+import HiremeEntry from '@/features/hireme/hireme-entry'
 import TopbarEntry from '@/features/topbar/topbar-entry'
 import { BackgroundBlurs } from '@/shared/components'
 import type { LayoutProps } from '@/shared/types/layout.types'
@@ -5,7 +7,7 @@ import { motion } from 'motion/react'
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <>
+    <HiremeProvider>
       <BackgroundBlurs />
       <TopbarEntry />
       <motion.main
@@ -16,6 +18,7 @@ export default function Layout({ children }: LayoutProps) {
       >
         {children}
       </motion.main>
-    </>
+      <HiremeEntry />
+    </HiremeProvider>
   )
 }

@@ -16,7 +16,7 @@ export default function TopbarMobileMenu() {
         </li>
       ))}
       <li className='sm:hidden'>
-        <TopbarCta className='mt-2 block px-3 py-2 text-center' />
+        <TopbarCta className='mt-2 block w-full px-3 py-2 text-center' />
       </li>
     </ul>
   )

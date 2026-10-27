@@ -1,3 +1,4 @@
+import { ApiConfig } from './api.config'
 import { SectionsConfig } from './sections.config'
 
-export { SectionsConfig }
+export { ApiConfig, SectionsConfig }
