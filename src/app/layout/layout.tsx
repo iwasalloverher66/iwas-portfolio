@@ -1,0 +1,24 @@
+import HiremeProvider from '@/features/hireme/components/hireme-provider'
+import HiremeEntry from '@/features/hireme/hireme-entry'
+import TopbarEntry from '@/features/topbar/topbar-entry'
+import { BackgroundBlurs } from '@/shared/components'
+import type { LayoutProps } from '@/shared/types/layout.types'
+import { motion } from 'motion/react'
+
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <HiremeProvider>
+      <BackgroundBlurs />
+      <TopbarEntry />
+      <motion.main
+        className='flex-1'
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      >
+        {children}
+      </motion.main>
+      <HiremeEntry />
+    </HiremeProvider>
+  )
+}
