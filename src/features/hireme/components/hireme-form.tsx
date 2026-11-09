@@ -43,7 +43,7 @@ export default function HiremeForm() {
         <button
           type='submit'
           disabled={isSubmitting}
-          className='mt-2 cursor-pointer rounded-lg border border-(--accent-border) bg-(--accent-bg) px-4 py-2.5 font-medium text-(--accent) transition-shadow hover:shadow-(--shadow) disabled:cursor-wait disabled:opacity-60'
+          className='mt-2 cursor-pointer rounded-lg border border-(--accent-border) bg-black px-4 py-2.5 font-medium text-(--accent) transition-shadow hover:shadow-(--shadow) disabled:cursor-wait disabled:opacity-60'
         >
           {isSubmitting ? 'Sending…' : 'Send request'}
         </button>

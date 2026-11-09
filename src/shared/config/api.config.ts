@@ -1,5 +1,5 @@
 export class ApiConfig {
-  // Set VITE_API_URL in .env.production.local to the deployed hireme-backend worker URL
+  // URL of the hireme-backend worker, set in .env
   static BASE_URL = import.meta.env.VITE_API_URL ?? ''
   static CONTACT = `${ApiConfig.BASE_URL}/api/contact`
 }

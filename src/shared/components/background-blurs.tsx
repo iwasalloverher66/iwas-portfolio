@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react'
 
 const BLOBS = [
   {
@@ -7,12 +7,12 @@ const BLOBS = [
     duration: 28
   },
   {
-    className: 'top-[30%] right-[-12rem] size-[32rem] bg-indigo-500/25',
+    className: 'top-[30%] right-[-12rem] size-[32rem] bg-(--accent)/30',
     drift: { x: [0, -100, -20, 0], y: [0, 80, -60, 0] },
     duration: 34
   },
   {
-    className: 'bottom-[-14rem] left-[20%] size-[40rem] bg-fuchsia-500/20',
+    className: 'bottom-[-14rem] left-[20%] size-[40rem] bg-(--accent)/20',
     drift: { x: [0, 60, -80, 0], y: [0, -80, -20, 0] },
     duration: 40
   }

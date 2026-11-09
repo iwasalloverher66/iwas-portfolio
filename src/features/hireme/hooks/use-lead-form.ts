@@ -1,8 +1,9 @@
-import type { LeadIssue, LeadPayload } from '@/shared/types'
+import type { LeadPayload } from '@/shared/types'
 import { zodResolver } from '@/shared/utils'
 import { useForm } from 'react-hook-form'
-import { sendLead } from '../api/send-lead'
+import { LeadRequestError } from '../api/lead-request-error'
 import { LEAD_MESSAGES, leadSchema, type LeadFormValues } from '../schemas/lead.schema'
+import { useSendLead } from './use-send-lead'
 
 const NETWORK_ERROR = 'Could not reach the server. Please try again later.'
 const SERVER_ERROR = 'Something went wrong. Please check the form and try again.'
@@ -24,34 +25,35 @@ export function useLeadForm() {
     mode: 'onTouched'
   })
 
-  const applyServerIssues = (issues: LeadIssue[] = []) => {
-    for (const issue of issues) {
+  const { mutate, isPending, isSuccess } = useSendLead()
+
+  const handleError = (error: Error) => {
+    if (!(error instanceof LeadRequestError)) {
+      console.error('[hireme] Failed to send lead:', error)
+      form.setError('root.server', { type: 'network', message: NETWORK_ERROR })
+      return
+    }
+
+    // Backend messages are in Russian, so its issues are mapped onto our own field messages
+    for (const issue of error.issues) {
       if (isLeadField(issue.field)) {
         form.setError(issue.field, { type: 'server', message: LEAD_MESSAGES[issue.field] })
       }
     }
+
+    form.setError('root.server', { type: 'server', message: SERVER_ERROR })
   }
 
-  const onSubmit = form.handleSubmit(async payload => {
-    try {
-      const response = await sendLead(payload)
-
-      if (response.success) return
-
-      applyServerIssues(response.issues)
-      form.setError('root.server', { type: 'server', message: SERVER_ERROR })
-    } catch {
-      form.setError('root.server', { type: 'network', message: NETWORK_ERROR })
-    }
+  const onSubmit = form.handleSubmit(payload => {
+    form.clearErrors('root')
+    mutate(payload, { onError: handleError })
   })
-
-  const { errors, isSubmitting, isSubmitSuccessful } = form.formState
 
   return {
     register: form.register,
     onSubmit,
-    errors,
-    isSubmitting,
-    isSuccess: isSubmitSuccessful && !errors.root
+    errors: form.formState.errors,
+    isSubmitting: isPending,
+    isSuccess
   }
 }

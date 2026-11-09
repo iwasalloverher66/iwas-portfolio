@@ -19,7 +19,7 @@ export default function TopbarCta({ className = '' }: TopbarCtaProps) {
       type='button'
       onClick={handleClick}
       aria-haspopup='dialog'
-      className={`cursor-pointer rounded-lg border border-(--accent-border) bg-(--accent-bg) font-medium text-(--accent) ${className}`}
+      className={`cursor-pointer rounded-lg border border-(--accent-border) bg-black font-medium text-(--accent) ${className}`}
     >
       Hire me
     </button>

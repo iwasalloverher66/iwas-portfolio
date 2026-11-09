@@ -1,4 +1,4 @@
-import { useHireme } from '../hireme.context';
+import { useHireme } from '../hireme.context'
 
 export default function HiremeSuccess() {
   const { close } = useHireme()
@@ -7,7 +7,7 @@ export default function HiremeSuccess() {
     <div role='status' className='flex flex-col items-center gap-4 py-6 text-center'>
       <span
         aria-hidden
-        className='flex size-12 items-center justify-center rounded-full border border-(--accent-border) bg-(--accent-bg) text-xl text-(--accent)'
+        className='flex size-12 items-center justify-center rounded-full border border-(--accent-border) bg-black text-xl text-(--accent)'
       >
         ✓
       </span>
