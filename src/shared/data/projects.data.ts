@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     title: 'Portfolio',
     description:
       'This site. A single-page portfolio with smooth section scrolling, compound components and an animated background.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Motion']
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Motion', 'Tanstack Query']
   },
   {
     id: 2,
